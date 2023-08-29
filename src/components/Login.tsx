@@ -21,24 +21,30 @@ function Login() {
       });
   };
 
+  function preventForm(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+  }
+
   return (
-    <div>
-      <input
-        type="text"
-        data-testid="login-name-input"
-        onChange={ (element) => setName(element.target.value) }
-      />
+    <form onSubmit={ preventForm }>
+      <div>
+        <input
+          type="text"
+          data-testid="login-name-input"
+          onChange={ (element) => setName(element.target.value) }
+        />
 
-      <button
-        data-testid="login-submit-button"
-        disabled={ name.length < 3 }
-        onClick={ () => handleSubmit(name) }
-      >
-        Entrar
-      </button>
+        <button
+          data-testid="login-submit-button"
+          disabled={ name.length < 3 }
+          onClick={ () => handleSubmit(name) }
+        >
+          Entrar
+        </button>
 
-      { loading && <Loading /> }
-    </div>
+        { loading && <Loading /> }
+      </div>
+    </form>
   );
 }
 
