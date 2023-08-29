@@ -8,8 +8,8 @@ header {
 }
 
 footer {
-  bottom: 0;
   background-color: rgb(147, 198, 245);
+  bottom: 0;
   display: flex;
   justify-content: center;
   padding: 20px;
