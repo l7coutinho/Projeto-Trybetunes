@@ -1,0 +1,97 @@
+.container {
+  text-align: center;
+  background-color: white;
+}
+
+.button {
+  cursor: pointer;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(147, 198, 245);
+  font-size: 16px;
+  padding: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #e2e0e0;
+}
+
+.button:disabled {
+  background-color: #f16179;
+  cursor: not-allowed;
+}
+
+.input {
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  margin-right: 10px;
+  outline: none;
+  padding: 20px;
+  width: 40%;
+}
+
+.input:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.418);
+}
+
+.input:focus {
+  background-color: #eeeaea;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.418);
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-img {
+  text-align: center;
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.card-title {
+  color: black;
+  font-size: 1.4rem;
+}
+
+.card-p {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.title {
+  color: rgb(102, 177, 247);
+  font-size: 2rem;
+}
+
+.pd-top {
+  padding-top: 15rem;
+}

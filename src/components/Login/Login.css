@@ -1,0 +1,45 @@
+.container {
+  text-align: center;
+}
+
+.input {
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.418);
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  margin-right: 10px;
+  outline: none;
+  padding: 20px;
+  width: 40%;
+}
+
+.input:focus {
+  background-color: #eeeaea;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.418);
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.button {
+  cursor: pointer;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(147, 198, 245);
+  font-size: 16px;
+  padding: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #e2e0e0;
+}
+
+.button:disabled {
+  background-color: #f16179;
+  cursor: not-allowed;
+}

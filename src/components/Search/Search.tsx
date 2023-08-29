@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import searchAlbumsAPI from '../services/searchAlbumsAPI';
-import Loading from './Loading';
+import searchAlbumsAPI from '../../services/searchAlbumsAPI';
+import Loading from '../Loading';
+import './Search.css';
 
 function Search() {
   const [name, setName] = useState('');
@@ -33,36 +34,46 @@ function Search() {
   }
 
   return (
-    <form onSubmit={ preventForm }>
+    <form onSubmit={ preventForm } className="container">
       <div>
-        <input
-          data-testid="search-artist-input"
-          type="text"
-          placeholder="Nome do artista"
-          value={ name }
-          onChange={ (element) => setName(element.target.value) }
-        />
-        <button
-          data-testid="search-artist-button"
-          disabled={ name.length <= 1 || loading }
-          onClick={ handleSearch }
-        >
-          Procurar
-        </button>
+        <div className="form-container">
+          <input
+            data-testid="search-artist-input"
+            type="text"
+            placeholder="Nome do artista"
+            value={ name }
+            className="input"
+            onChange={ (element) => setName(element.target.value) }
+          />
+          <button
+            data-testid="search-artist-button"
+            disabled={ name.length <= 1 || loading }
+            onClick={ handleSearch }
+            className="button"
+          >
+            Procurar
+          </button>
+        </div>
 
         {loading && <Loading />}
 
         {searchAlbums.length > 0 && (
           <div>
-            <p>{`Resultado de álbuns de: ${backup}`}</p>
-            <ul>
+            <h2 className="title">{`Resultado de álbuns de: ${backup}`}</h2>
+            <ul className="container-card">
               {searchAlbums.map((album: any) => (
-                <li key={ album.collectionId }>
+                <li
+                  key={ album.collectionId }
+                  className="card"
+                >
                   <Link
                     to={ `/album/${album.collectionId}` }
                     data-testid={ `link-to-album-${album.collectionId}` }
+                    className="card-img"
                   >
-                    { album.collectionName }
+                    <img src={ album.artworkUrl100 } alt="" />
+                    <h3 className="card-title">{ album.collectionName }</h3>
+                    <p className="card-p">{ album.artistName }</p>
                   </Link>
                 </li>
               ))}
@@ -70,7 +81,7 @@ function Search() {
           </div>
         )}
       </div>
-      {error && (<p>Nenhum álbum foi encontrado</p>)}
+      {error && (<h2 className="title pd-top">Nenhum álbum foi encontrado</h2>)}
     </form>
   );
 }
