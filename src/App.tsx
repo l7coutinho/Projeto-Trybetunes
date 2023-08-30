@@ -8,10 +8,11 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={ <Layout /> }>
-        <Route index element={ <Login /> } />
         <Route path="/search" element={ <Search /> } />
         <Route path="/album/:id" element={ <Album /> } />
       </Route>
+
+      <Route index element={ <Login /> } />
     </Routes>
   );
 }

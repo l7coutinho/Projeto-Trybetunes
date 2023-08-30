@@ -1,12 +1,11 @@
 import { Outlet } from 'react-router-dom';
+import Header from '../Header/Header';
 import './Layout.css';
 
 function Layout() {
   return (
     <>
-      <header>
-        <h1 className="text">Trybetunes!</h1>
-      </header>
+      <Header />
 
       <Outlet />
 

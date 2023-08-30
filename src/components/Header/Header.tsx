@@ -1,0 +1,44 @@
+import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getUser } from '../../services/userAPI';
+
+function Header() {
+  const [user, setUser] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getUser()
+      .then((userData) => {
+        setUser(userData.name);
+        setLoading(false);
+      });
+  }, []);
+
+  return (
+    <header data-testid="header-component">
+      <ul>
+        <li>
+          <NavLink to="/search" data-testid="link-to-search">
+            Search
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/favorites" data-testid="link-to-favorites">
+            Favorites
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/profile" data-testid="link-to-profile">
+            Profile
+          </NavLink>
+        </li>
+      </ul>
+
+      <p data-testid="header-user-name">
+        {loading ? 'Carregando...' : `Bem-vindo, ${user}`}
+      </p>
+    </header>
+  );
+}
+
+export default Header;
