@@ -36,7 +36,7 @@ function Search() {
   return (
     <form onSubmit={ preventForm } className="container">
       <div>
-        <div className="form-container">
+        <div className="form-container pd-top">
           <input
             data-testid="search-artist-input"
             type="text"

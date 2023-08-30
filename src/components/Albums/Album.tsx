@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import getMusics from '../../services/musicsAPI';
 import MusicCard from './MusicCard';
 import Loading from '../Loading';
+import './index.css';
 
 type AlbumInfoProps = {
   artistName: string;
   collectionName: string;
+  artworkUrl100: string;
   musicTracks: any;
 };
 
@@ -21,6 +23,7 @@ function Album() {
         setAlbumInfo({
           artistName: albumData.artistName,
           collectionName: albumData.collectionName,
+          artworkUrl100: albumData.artworkUrl100,
           musicTracks,
         });
       });
@@ -31,10 +34,14 @@ function Album() {
   }
 
   return (
-    <div>
-      <h1 data-testid="album-name">{albumInfo.collectionName}</h1>
-      <h2 data-testid="artist-name">{albumInfo.artistName}</h2>
+    <div className="container-musics">
       <div>
+        <h1 data-testid="album-name">{albumInfo.collectionName}</h1>
+        <img src={ albumInfo.artworkUrl100 } alt="Album" />
+        <p data-testid="artist-name">{albumInfo.artistName}</p>
+      </div>
+
+      <div className="musics">
         {albumInfo.musicTracks.map((track: any) => (
           <MusicCard
             key={ track.trackId }
