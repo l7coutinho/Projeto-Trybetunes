@@ -38,6 +38,7 @@ function Album() {
         {albumInfo.musicTracks.map((track: any) => (
           <MusicCard
             key={ track.trackId }
+            trackId={ track.trackId }
             trackName={ track.trackName }
             previewUrl={ track.previewUrl }
           />

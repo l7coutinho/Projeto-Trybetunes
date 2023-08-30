@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.container-h1 {
+  padding: 7rem;
+  font-size: 60px;
+}
+
 .input {
   background-color: white;
   border: none;

@@ -1,0 +1,29 @@
+.header-cont {
+  display: flex;
+  justify-content: space-between; /* Spread elements equally */
+  align-items: center; /* Vertically center items */
+  background-color: #333;
+  padding: 10px;
+  color: white;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px; /* Add some space between links */
+}
+
+.header-title {
+  font-size: 24px;
+}
+
+.header-user-info {
+  font-size: 14px;
+}

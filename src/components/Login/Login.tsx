@@ -27,28 +27,31 @@ function Login() {
   }
 
   return (
-    <form onSubmit={ preventForm } className="pd-top">
-      <div className="container">
-        <input
-          type="text"
-          data-testid="login-name-input"
-          className="input"
-          placeholder="Insira seu nome"
-          onChange={ (element) => setName(element.target.value) }
-        />
+    <div className="container">
+      <h1 className="container-h1">TRYBETUNES!</h1>
+      <form onSubmit={ preventForm }>
+        <div>
+          <input
+            type="text"
+            data-testid="login-name-input"
+            className="input"
+            placeholder="Insira seu nome"
+            onChange={ (element) => setName(element.target.value) }
+          />
 
-        <button
-          data-testid="login-submit-button"
-          disabled={ name.length < 3 }
-          className="button"
-          onClick={ () => handleSubmit(name) }
-        >
-          Entrar
-        </button>
+          <button
+            data-testid="login-submit-button"
+            disabled={ name.length < 3 }
+            className="button"
+            onClick={ () => handleSubmit(name) }
+          >
+            Entrar
+          </button>
 
-        { loading && <Loading /> }
-      </div>
-    </form>
+          { loading && <Loading /> }
+        </div>
+      </form>
+    </div>
   );
 }
 

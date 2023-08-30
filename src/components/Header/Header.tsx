@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getUser } from '../../services/userAPI';
+import './index.css';
 
 function Header() {
   const [user, setUser] = useState('');
@@ -15,8 +16,8 @@ function Header() {
   }, []);
 
   return (
-    <header data-testid="header-component">
-      <ul>
+    <header data-testid="header-component" className="header-cont">
+      <ul className="list">
         <li>
           <NavLink to="/search" data-testid="link-to-search">
             Search
@@ -33,7 +34,7 @@ function Header() {
           </NavLink>
         </li>
       </ul>
-
+      <h1>TrybeTunes!</h1>
       <p data-testid="header-user-name">
         {loading ? 'Carregando...' : `Bem-vindo, ${user}`}
       </p>
