@@ -5,7 +5,7 @@ function Layout() {
   return (
     <>
       <header>
-        <h1>Trybetunes!</h1>
+        <h1 className="text">Trybetunes!</h1>
       </header>
 
       <Outlet />
