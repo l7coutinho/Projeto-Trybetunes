@@ -34,7 +34,7 @@ function Header() {
           </NavLink>
         </li>
       </ul>
-      <h1>TrybeTunes!</h1>
+      <h1 className="header-title">TrybeTunes!</h1>
       <p data-testid="header-user-name">
         {loading ? 'Carregando...' : `Bem-vindo, ${user}`}
       </p>

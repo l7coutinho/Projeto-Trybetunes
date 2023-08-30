@@ -1,18 +1,7 @@
-header {
-  background-color: rgb(147, 198, 245);
-  display: flex;
-  margin-bottom: 25px;
-  max-width: 100%;
-}
-
-.text {
-  color: white;
-  font-size: 50px;
-}
-
 footer {
-  background-color: rgb(147, 198, 245);
+  background-color: #333;
   bottom: 0;
+  color: white;
   display: flex;
   justify-content: center;
   padding: 20px;
